@@ -1,0 +1,12 @@
+
+
+
+#formulario p{
+    text-align: center;
+}
+
+#formulario label{   
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}
