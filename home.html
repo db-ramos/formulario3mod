@@ -6,43 +6,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    
 </head>
 <body>
     <h1>Bem-vindo</h1>
     <h2>Preencha seus dados</h2>
-    <form>
+    <form method="post" action="salvar.php">
+        <fieldset>
+        <legend>Dados Pessoais</legend>
+        
         <p>
             <label>Nome:</label>
-            <input type="text">
+            <input type="text" name="nome">
         </p>
         <p>
             <label>E-mail</label>
-            <input type="email">
+            <input type="email" name="email">
         </p>
         <p>
             <label>Endereço:</label>
-            <input type="text">
+            <input type="text" name="endereco">
         </p>
         <p>
             <label>Cidade:</label>
-            <input type="text">
+            <input type="text" name="cidade">
         </p>
         <p>
             <label>Telefone:</label>
-            <input type="text" size="2" maxlength="2" pattern="\d\d">
-            <input type="tel">
+            <input type="text" size="2" maxlength="2" pattern="\d\d" name="ddd">
+            <input type="tel" name="telefone" maxlength="9">
         </p>
         <p>
-            <label>Usuário:</label>
-            <input type="text" placeholder="Entre com o seu login">
+            <label>CPF:</label>
+            <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+            title="Formato do campo deve ser: NNN.NNN.NNN-NN">
         </p>
+        <p> 
+            <label>Sexo:</label>
+          
+            <label for="sm">Masculino</label>
+            <input type="radio" name="sexo" value="m" id="sm">
+          
+            <label for="sf">Feminino</label>
+            <input type="radio" name="sexo" value="f" id="sf">
+        </p>
+        <p>
+            <label>Cidade onde nasceu:</label>
+            <select name="cidade_nasc">
+                <option value="Manaus">Manaus</option>
+                <option value="Parintins">Parintins</option>
+                <option value="Maués">Maués</option>
+                <option value="Nhamundá">Nhamundá</option>
+            </select>
+        </p>
+        </fieldset>
+
+        <fieldset>
+        <legend>Dados adicionais</legend>
+        <p>
+            <label>Cursos adicionais:</label>
+            <br><input type="checkbox" name="cursos[]" value="1" id="c1">
+            <label for="c1">Android</label>
+            <br><input type="checkbox" name="cursos[]" value="2" id="c2">
+            <label for="c2">React Native</label>
+            <br><input type="checkbox" name="cursos[]" value="3" id="c3">
+            <label for="c3">Angular</label>
+        </p>
+        <p>
+            <label>Experiências anteriores:</label>
+            <br>
+            <textarea name="experiencia" cols="30" rows="4" 
+            placeholder="Escreva aqui as suas experiências anteriores"></textarea>
+        </p>
+        <p> 
+            <label>Usuário:</label>
+            <input type="text" placeholder="Entre com o seu login" name="usuario">
+        </p>
+        
         <p>
             <label>Senha:</label>
-            <input type="password">
+            <input type="password" name="senha">
         </p>
+        </fieldset>
         <p>
-            <input type="submit" value="Finalizar a minha inscrição">
+            <input type="submit" value="Finalizar a minha inscrição" name="bt_finalizar">
         </p>
     </form>
 </body>
